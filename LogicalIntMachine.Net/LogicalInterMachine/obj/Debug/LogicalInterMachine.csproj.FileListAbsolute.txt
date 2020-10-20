@@ -1,0 +1,10 @@
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\bin\Debug\LogicalInterMachine.exe.config
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\bin\Debug\LogicalInterMachine.exe
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\bin\Debug\LogicalInterMachine.pdb
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.Properties.Resources.resources
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csproj.GenerateResource.cache
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csproj.CoreCompileInputs.cache
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.exe
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.pdb
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csprojAssemblyReference.cache
+C:\Users\mitia\Desktop\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.Form1.resources
