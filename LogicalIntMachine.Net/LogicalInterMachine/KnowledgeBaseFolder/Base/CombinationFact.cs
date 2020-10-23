@@ -9,6 +9,8 @@ namespace KnowledgeBaseFolder.Base
 
 	public class CombinationFact : IXmlSerializable
 	{
+		List<Fact> _factsRuele;
+
 		public CombinationFact()
 		{
 			_factsRuele = new List<Fact>();
@@ -20,23 +22,13 @@ namespace KnowledgeBaseFolder.Base
 				AddFact(facts[i].NameFact, facts[i].StateOfFact);
 		}
 
-		List<Fact> _factsRuele;
-
 		/// <summary>
 		///  Найти нужные факт по имени и вернуть true (нашел) false(не соответсвие) null (не нашел).
 		/// </summary>
-		public bool? FindFact(string NameFact)
-		{
+		public IReadOnlyList<Fact> GetFacts => _factsRuele;
 
-			for (int i = 0; i < _factsRuele.Count; i++)
-				if (NameFact == _factsRuele[i].NameFact)
-				{
-					if (_factsRuele[i].StateOfFact == true)
-						return true;
-					else return false;
-				}
-			return null;
-		}
+
+
 
 		/// <summary>
 		///  Добавить новый факт (триггер) 

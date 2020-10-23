@@ -8,24 +8,13 @@ namespace KnowledgeBaseFolder.Base
 {	
 	public  class Rule:IXmlSerializable
 	{
-		public Rule(string nameRule,string nameQuestion)
-		{
-			_nameRule = nameRule;
-			_nameQuestion = nameQuestion;
-			_factsRuele = new List<CombinationFact>();
-			_mutableFact = new List<Fact>();
-		}
-		public Rule()
-		{
-			_factsRuele = new List<CombinationFact>();
-			_mutableFact = new List<Fact>();
-		}
 		string _nameRule;
 		string _nameQuestion;
 
 		List<CombinationFact> _factsRuele;
 		List<Fact> _mutableFact;
 
+		public bool IsUsed;
 		/// <summary>
 		///  Имя правила.
 		/// </summary>
@@ -45,6 +34,26 @@ namespace KnowledgeBaseFolder.Base
 		///  Вернуть List фактов рабочей памяти
 		/// </summary>
 		public IReadOnlyList<Fact> GetMutableFacts => _mutableFact;
+
+		public Rule(string nameRule,string nameQuestion)
+		{
+			_nameRule = nameRule;
+			_nameQuestion = nameQuestion;
+			_factsRuele = new List<CombinationFact>();
+			_mutableFact = new List<Fact>();
+			IsUsed = false;
+		}
+		public Rule()
+		{
+			_factsRuele = new List<CombinationFact>();
+			_mutableFact = new List<Fact>();
+			IsUsed = false;
+		}
+		
+		public void Used()
+        {
+			IsUsed = true;
+        }
 
 		/// <summary>
 		///  Добавить новый факт

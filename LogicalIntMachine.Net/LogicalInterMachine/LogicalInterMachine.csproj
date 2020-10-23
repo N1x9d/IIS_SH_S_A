@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceMachine\InferenceMachine.cs" />
+    <Compile Include="InterfaceMachine\UserAnswer.cs" />
     <Compile Include="KnowledgeBaseFolder\Base\Container.cs" />
     <Compile Include="KnowledgeBaseFolder\KnowledgeBase.cs" />
     <Compile Include="KnowledgeBaseFolder\Base\Answer.cs" />

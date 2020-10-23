@@ -11,30 +11,12 @@ namespace KnowledgeBaseFolder
     /// </summary>
     class KnowledgeBase
     {
-        private KnowledgeBase()
-        {
-            workingMemory = new WorkingMemory();
-            container = new Container();
-        }
-        
-        private static KnowledgeBase knowledge = null;
-
-        public static KnowledgeBase GetKnowledge
-        {
-            get
-            {
-                if (knowledge == null)
-                    knowledge = new KnowledgeBase();
-                return knowledge;
-            }
-        }
-
         WorkingMemory workingMemory;
-        Container container; 
+        Container container;
+
         /// <summary>
         ///  Вернуть List правил.
         /// </summary> 
-        
         public IReadOnlyList<Rule> GetRules => container.GetRules;
 
         /// <summary>
@@ -47,20 +29,22 @@ namespace KnowledgeBaseFolder
         /// </summary>
         public IReadOnlyList<Fact> GetFactWorkingMemory => workingMemory.TemporaryFacts;
 
-        /// <summary>
-        ///  Доьавить новое правило.
-        /// </summary>
-        public void AddRules(string nameRule, string nameAnswer, List<CombinationFact> factRule, List<Fact> mutableFacts) //временные
+        private static KnowledgeBase knowledge = null;
+
+        private KnowledgeBase()
         {
-            container.AddRules(nameRule, nameAnswer, factRule, mutableFacts);
+            workingMemory = new WorkingMemory();
+            container = new Container();
         }
 
-        /// <summary>
-        ///  Добавить новый ответ.
-        /// </summary>
-        public void AddAnswer(string nameAnswer, List<CombinationFact> factsAnswer)
+        public static KnowledgeBase GetKnowledge
         {
-            container.AddAnswer(nameAnswer, factsAnswer);
+            get
+            {
+                if (knowledge == null)
+                    knowledge = new KnowledgeBase();
+                return knowledge;
+            }
         }
 
         /// <summary>
@@ -71,6 +55,9 @@ namespace KnowledgeBaseFolder
             workingMemory = new WorkingMemory();
         }
 
+
+
+
         /// <summary>
         ///  Добавить новый факт в рабочую память.
         /// </summary>
@@ -78,7 +65,7 @@ namespace KnowledgeBaseFolder
         {
             workingMemory.AddFact(nameFact, stateOfFact);
         }
-        public void Load(string filename)
+        public void Load(string filename = "KnowledgeBase.xml")
         {
             var binFormatter = new XmlSerializer(typeof(Container));
             if (filename != null)
@@ -108,6 +95,22 @@ namespace KnowledgeBaseFolder
             }
             catch (System.IO.IOException) { MessageBox.Show("Данный файл уже существует"); }
 
+        }
+
+        /// <summary>
+        ///  Доьавить новое правило.
+        /// </summary>
+        public void AddRules(string nameRule, string nameAnswer, List<CombinationFact> factRule, List<Fact> mutableFacts) //временные
+        {
+            container.AddRules(nameRule, nameAnswer, factRule, mutableFacts);
+        }
+
+        /// <summary>
+        ///  Добавить новый ответ.
+        /// </summary>
+        public void AddAnswer(string nameAnswer, List<CombinationFact> factsAnswer)
+        {
+            container.AddAnswer(nameAnswer, factsAnswer);
         }
     }
 }

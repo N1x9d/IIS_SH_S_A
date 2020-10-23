@@ -14,13 +14,19 @@ namespace LogicalInterMachine
 {
     public partial class Form1 : Form
     {
+        LogicalMachine logicalMachine;
+
         public Form1()
         {
             InitializeComponent();
             logicalMachine = new LogicalMachine();
-            logicalMachine.LoadKnowladgeBasw("KnowledgeBase.xml");
-            
+            logicalMachine.LoadKnowladgeBasw();
+            logicalMachine.GetCurentRuler();
         }
-        LogicalMachine logicalMachine;
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

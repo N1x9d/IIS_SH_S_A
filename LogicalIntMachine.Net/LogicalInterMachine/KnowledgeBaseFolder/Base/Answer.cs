@@ -8,17 +8,6 @@ namespace KnowledgeBaseFolder.Base
 {
 	public class Answer:IXmlSerializable
 	{
-		public Answer(string nameAnswer)
-		{
-			_nameAnswer = nameAnswer;
-			_factsAnswer = new List<CombinationFact>();
-
-
-		}
-		public Answer()
-        {
-			_factsAnswer = new List<CombinationFact>();
-		}
 		string _nameAnswer;
 		List<CombinationFact> _factsAnswer;
 
@@ -31,6 +20,18 @@ namespace KnowledgeBaseFolder.Base
 		///  Получить коллекцию комбинаций фактов 
 		/// </summary>
 		public IReadOnlyList<CombinationFact> GetCombinationFacts => _factsAnswer;
+
+		public Answer(string nameAnswer)
+		{
+			_nameAnswer = nameAnswer;
+			_factsAnswer = new List<CombinationFact>();
+
+
+		}
+		public Answer()
+        {
+			_factsAnswer = new List<CombinationFact>();
+		}
 
 		/// <summary>
 		/// Добавить новый факт (триггер)

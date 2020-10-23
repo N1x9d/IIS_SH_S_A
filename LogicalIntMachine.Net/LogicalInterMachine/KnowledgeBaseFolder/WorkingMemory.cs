@@ -11,7 +11,7 @@ namespace KnowledgeBaseFolder
             _temporaryFacts = new List<Fact>();
         }
 
-        readonly List<Fact> _temporaryFacts;
+        private List<Fact> _temporaryFacts;
 
         public IReadOnlyList<Fact>  TemporaryFacts => _temporaryFacts;
 
