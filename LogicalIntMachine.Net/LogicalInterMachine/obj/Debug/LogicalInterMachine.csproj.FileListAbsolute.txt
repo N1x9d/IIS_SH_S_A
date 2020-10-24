@@ -18,3 +18,13 @@ C:\Users\Admin\Source\Repos\IIS_SH_S_A\LogicalIntMachine.Net\LogicalInterMachine
 C:\Users\Admin\Source\Repos\IIS_SH_S_A\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Source\Repos\IIS_SH_S_A\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.exe
 C:\Users\Admin\Source\Repos\IIS_SH_S_A\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.pdb
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csprojAssemblyReference.cache
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.Form1.resources
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.Properties.Resources.resources
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csproj.GenerateResource.cache
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.csproj.CoreCompileInputs.cache
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.exe
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\obj\Debug\LogicalInterMachine.pdb
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\bin\Debug\LogicalInterMachine.exe.config
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\bin\Debug\LogicalInterMachine.exe
+C:\Users\Nova\Source\Repos\IIS_SH_S_A2\LogicalIntMachine.Net\LogicalInterMachine\bin\Debug\LogicalInterMachine.pdb
