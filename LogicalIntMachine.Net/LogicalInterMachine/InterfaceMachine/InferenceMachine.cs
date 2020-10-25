@@ -59,6 +59,7 @@ namespace LogicalInterfaceMachine
                 }
             }
             CheckAnswers();
+            if(ResaltAnswer ==null)
             GetCurentRuler();
         }
 
@@ -101,17 +102,27 @@ namespace LogicalInterfaceMachine
                                 if (factInMemory[0].StateOfFact != fact.StateOfFact)
                                 isContainsNeededFacts = false;
                             }
+                            else
+                            {
+                                isContainsNeededFacts = false;
+                                break;
+                            }
                         }
                         else
                             break;
                     }
-                }
+               
                 if (isContainsNeededFacts)
                 {
                     ResaltAnswer = answ.NameAnswer;
                     break;
                 }
-            
+                }
+                if (isContainsNeededFacts)
+                {
+                    break;
+                }
+
             }
         }
         /// <summary>
@@ -124,8 +135,9 @@ namespace LogicalInterfaceMachine
             AnswersWays.Clear();
             var RulersList = knowledgeBase.GetRules;
             var instanteMemoryCopy = knowledgeBase.GetFactWorkingMemory;
-           
-            foreach(var rul in RulersList)
+            var fik = knowledgeBase.GetAnswers;
+
+            foreach (var rul in RulersList)
             {
                 if (!rul.IsUsed)
                 {
@@ -153,16 +165,23 @@ namespace LogicalInterfaceMachine
                                         if (factInMemory[0].StateOfFact != fact.StateOfFact)
                                             isContainsNeededFacts = false;
                                     }
+                                    else
+                                        isContainsNeededFacts = false;
                                 }
                                 else 
                                     break;
                             }
+                        
+                            if (isContainsNeededFacts)
+                            {
+                                CurentRule = rul;
+                                rul.Used();
+                                AddDataAboutSelectedRule();
+                                break;
+                            }
                         }
                         if (isContainsNeededFacts)
                         {
-                            CurentRule = rul;
-                            rul.Used();
-                            AddDataAboutSelectedRule();
                             break;
                         }
                     }

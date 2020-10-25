@@ -58,30 +58,7 @@
         </MutableFact>
       </MutablesFact>
     </Rule>
-    <Rule>
-      <nameRule>determine-category-low</nameRule>
-      <nameQuestion />
-      <CombinationsFact>
-        <CombinationFact>
-          <Fact>
-            <nameFact>budget-low</nameFact>
-            <dataFact>True</dataFact>
-          </Fact>
-          <Fact>
-            <nameFact>children</nameFact>
-            <dataFact>True</dataFact>
-          </Fact>
-        </CombinationFact>
-      </CombinationsFact>
-      <MutablesFact>
-        <MutableFact>
-          <Fact>
-            <nameFact>category-low</nameFact>
-            <dataFact>True</dataFact>
-          </Fact>
-        </MutableFact>
-      </MutablesFact>
-    </Rule>
+    
     <Rule>
       <nameRule>determine-category-low</nameRule>
       <nameQuestion />

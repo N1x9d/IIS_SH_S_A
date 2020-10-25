@@ -51,9 +51,9 @@ namespace LogicalInterMachine
             {
                 textBox2.Text = logicalMachine.ResaltAnswer;
             }
-            //else
-            //{
-                
+            else
+            {
+
                 bool otvet = false;
 
                 if (comboBox1.SelectedItem.ToString() == "yes" || comboBox1.SelectedItem.ToString() == "no")
@@ -63,16 +63,18 @@ namespace LogicalInterMachine
                     UserAnswer userAnswer = new UserAnswer(otvet);
                     logicalMachine.AddDataFromUser(userAnswer);
                 }
-                else
+                else if (comboBox1.Items.Count!=0)
                 {
                     UserAnswer userAnswer = new UserAnswer(comboBox1.SelectedItem.ToString());
                     logicalMachine.AddDataFromUser(userAnswer);
                 }
+                else
+                    logicalMachine.GetCurentRuler();
 
-                logicalMachine.GetCurentRuler();
+                textBox2.Text = logicalMachine.ResaltAnswer;
                 textBox1.Text = logicalMachine.CurQuestion;
                 comboBox1.Items.Clear();
-
+                comboBox1.Text="Get Answer";
                 if (logicalMachine.AnswersWays.Count > 1)
                 {
                     for (int i = 0; i < logicalMachine.AnswersWays.Count; i++)
@@ -85,7 +87,12 @@ namespace LogicalInterMachine
                     comboBox1.Items.Add("yes");
                     comboBox1.Items.Add("no");
                 }
-            //}
+            }
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

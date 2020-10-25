@@ -41,12 +41,7 @@ namespace KnowledgeBaseFolder
                                 new Fact("budget-low",true),
                                 new Fact("children",true) })},
                 new List<Fact> { new Fact("category-low", true) });
-            knowledgeBase.AddRules("determine-category-low", null,
-                new List<CombinationFact>{
-                    new CombinationFact(new List<Fact>{
-                                new Fact("budget-low",true),
-                                new Fact("children",true) })},
-                new List<Fact> { new Fact("category-low", true) });
+            
             knowledgeBase.AddRules("determine-category-middle", null,
                 new List<CombinationFact>{
                     new CombinationFact(new List<Fact>{
