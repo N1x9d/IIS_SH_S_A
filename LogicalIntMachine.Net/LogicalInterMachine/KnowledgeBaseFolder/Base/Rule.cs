@@ -55,6 +55,10 @@ namespace KnowledgeBaseFolder.Base
 			IsUsed = true;
         }
 
+		public void UnUsed()
+		{
+			IsUsed = false;
+		}
 		/// <summary>
 		///  Добавить новый факт
 		/// </summary>	

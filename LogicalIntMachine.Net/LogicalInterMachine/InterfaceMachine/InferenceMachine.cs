@@ -189,6 +189,15 @@ namespace LogicalInterfaceMachine
             }
         }
 
+        public void Restart()
+        {
+            knowledgeBase.DropWorkMemory();
+            foreach(var rul in knowledgeBase.GetRules)
+            {
+                rul.UnUsed();
+            }
+        }
+
     }
     
    
