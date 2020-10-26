@@ -1,5 +1,6 @@
 ﻿using KnowledgeBaseFolder;
 using KnowledgeBaseFolder.Base;
+using LogicalInterMachine;
 using LogicalInterMachine.InterfaceMachine;
 using System;
 using System.Collections.Generic;
@@ -188,7 +189,11 @@ namespace LogicalInterfaceMachine
                 }
             }
         }
-
+        public void ShowGeneratedFacts()
+        {
+            Form2 FimInfo = new Form2(knowledgeBase.GetFactWorkingMemory.ToList());
+            FimInfo.Show();
+        }
         public void Restart()
         {
             knowledgeBase.DropWorkMemory();

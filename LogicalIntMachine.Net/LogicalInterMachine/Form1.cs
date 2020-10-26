@@ -54,6 +54,8 @@ namespace LogicalInterMachine
             if (logicalMachine.ResaltAnswer != null)
             {
                 textBox2.Text = logicalMachine.ResaltAnswer;
+                button3.Enabled=true;
+                
             }
             else
             {
@@ -94,11 +96,13 @@ namespace LogicalInterMachine
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            if (textBox2.Text != "")
+                button3.Enabled = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {            
+        {
+            button3.Enabled = false;
             textBox1.Clear();
             textBox2.Clear();
             comboBox1.Items.Clear();
@@ -138,6 +142,11 @@ namespace LogicalInterMachine
             {
                 otv = false;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            logicalMachine.ShowGeneratedFacts();
         }
     }
 }
