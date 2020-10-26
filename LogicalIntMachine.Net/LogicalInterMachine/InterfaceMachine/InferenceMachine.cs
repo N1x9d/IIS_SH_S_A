@@ -196,6 +196,7 @@ namespace LogicalInterfaceMachine
             {
                 rul.UnUsed();
             }
+            ResaltAnswer = null;
         }
 
     }

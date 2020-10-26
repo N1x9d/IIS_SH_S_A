@@ -26,17 +26,21 @@ namespace LogicalInterMachine
             textBox1.Text = logicalMachine.CurQuestion;
             if (logicalMachine.AnswersWays.Count>1)
             {
+                groupBox1.Visible = false;
                 for (int i=0; i< logicalMachine.AnswersWays.Count;i++)
                 {
                     comboBox1.Items.Add(logicalMachine.AnswersWays[i]);
                 }
             }
             else
-            {
-                comboBox1.Items.Add("yes");
-                comboBox1.Items.Add("no");
+            {                
+                groupBox1.Visible = true;
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;
             }
         }
+
+        bool otv = false;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -53,14 +57,9 @@ namespace LogicalInterMachine
             }
             else
             {
-
-                bool otvet = false;
-
-                if (comboBox1.SelectedItem.ToString() == "yes" || comboBox1.SelectedItem.ToString() == "no")
+                if (groupBox1.Visible == true)
                 {
-                    if (comboBox1.SelectedItem.ToString() == "yes") otvet = true;
-                    if (comboBox1.SelectedItem.ToString() == "no") otvet = false;
-                    UserAnswer userAnswer = new UserAnswer(otvet);
+                    UserAnswer userAnswer = new UserAnswer(otv);
                     logicalMachine.AddDataFromUser(userAnswer);
                 }
                 else if (comboBox1.Items.Count!=0)
@@ -77,6 +76,7 @@ namespace LogicalInterMachine
                 comboBox1.Text="Get Answer";
                 if (logicalMachine.AnswersWays.Count > 1)
                 {
+                    groupBox1.Visible = false;
                     for (int i = 0; i < logicalMachine.AnswersWays.Count; i++)
                     {
                         comboBox1.Items.Add(logicalMachine.AnswersWays[i]);
@@ -84,8 +84,9 @@ namespace LogicalInterMachine
                 }
                 else
                 {
-                    comboBox1.Items.Add("yes");
-                    comboBox1.Items.Add("no");
+                    groupBox1.Visible = true;
+                    radioButton1.Checked = false;
+                    radioButton2.Checked = false;
                 }
             }
 
@@ -94,6 +95,49 @@ namespace LogicalInterMachine
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {            
+            textBox1.Clear();
+            textBox2.Clear();
+            comboBox1.Items.Clear();
+            comboBox1.Text = "";
+            logicalMachine.Restart();
+            logicalMachine.GetCurentRuler();
+            textBox1.Text = logicalMachine.CurQuestion;
+            if (logicalMachine.AnswersWays.Count > 1)
+            {
+                groupBox1.Visible = false ;
+                for (int i = 0; i < logicalMachine.AnswersWays.Count; i++)
+                {
+                    comboBox1.Items.Add(logicalMachine.AnswersWays[i]);
+                }
+            }
+            else
+            {
+                groupBox1.Visible = true;
+                radioButton1.Checked = false;
+                radioButton2.Checked = false;              
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+            if (radioButton.Checked)
+            {
+                otv = true;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+            if (radioButton.Checked)
+            {
+                otv = false;
+            }
         }
     }
 }
