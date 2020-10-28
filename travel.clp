@@ -61,8 +61,8 @@
    
 (defrule determine-children ""   
 	(or (or (budget-low yes)      
-			(budget-middle yes)) 
-	(budget-high yes))
+                (budget-middle yes)) 
+	    (budget-high yes))
 	(not (repair ?))
 	=>
 	(assert (children (yes-or-no-p "Are you planning to go on vacation with children (yes/no)? "))))
@@ -76,26 +76,26 @@
    
 (defrule determine-category-middle ""   
 	(or (and(budget-middle yes)
-			(children yes))
-		(and(budget-low yes)
-			(children no)))	
+                (children yes))
+            (and(budget-low yes)
+                (children no)))	
 	(not (repair ?))
 	=>
 	(assert (category-middle yes)))
    
 (defrule determine-category-high ""  
-	(or (and (or(budget-high yes)
-				(budget-middle yes))
-		(children no))	
-	(and (budget-high yes)
-		 (children yes))) 			
+	(or(and(or(budget-high yes)
+		  (budget-middle yes))
+	       (children no))	
+	    (and (budget-high yes)
+                 (children yes))) 			
 	(not (repair ?))
 	=>
 	(assert (category-high yes)))
    
 (defrule determine-abroad ""
 	(or (category-middle yes)      
-		(category-high yes))
+	    (category-high yes))
 	(not (repair ?))
 	=>
 	(assert (abroad (yes-or-no-p "Do you want to spend your holiday abroad (yes/no)? ")))) 
@@ -164,83 +164,83 @@
 
 (defrule determine-budget-no ""
 	(and(and(budget-low no)
-			(budget-middle no))
-	(budget-high no))
+		(budget-middle no))
+	    (budget-high no))
 	(not (repair ?))
 	=>
 	(assert (repair "No options. Check budget. ")))
    
 (defrule determine-season-no ""
 	(and(and(and(winter no)
-				(spring no))
-			(summer no))
-	(autumn no))
+		    (spring no))
+                (summer no))
+	    (autumn no))
 	(not (repair ?))
 	=>
 	(assert (repair "No options. Check season. ")))
 
 (defrule Petersburg ""
 	(and(and(abroad no)
-			(category-middle yes))
-	(excursion yes))
+                (category-middle yes))
+	    (excursion yes))
 	(not (repair ?))
 	=>
 	(assert (repair "St. Petersburg.")))
 	
 (defrule Perm ""
 	(and(and(abroad no)
-			(category-low yes))
-	(excursion yes))
+                (category-low yes))
+	    (excursion yes))
 	(not (repair ?))
 	=>
 	(assert (repair "Perm.")))
    
 	(defrule Sochi-ski ""
 	(and(and(and(abroad no)
-				(category-middle yes))
-	(ski yes))
-	(or (or (winter yes)
-			(autumn yes))
-	(spring yes)))
+                    (category-middle yes))
+	        (ski yes))
+	     (or (or (winter yes)
+                     (autumn yes))
+	         (spring yes)))
 	(not (repair ?))
 	=>
 	(assert (repair "Sochi ski resort.")))
    
 (defrule Sochi-beach""
 	(and(and(and(abroad no)
-				(summer yes))
-			(beach yes))
-	(or (category-low yes)
-		(category-middle yes)))
+                    (summer yes))
+                (beach yes))
+	     (or (category-low yes)
+	         (category-middle yes)))
 	(not (repair ?))
 	=>
 	(assert (repair "Sochi beach resort.")))
    
 (defrule UAE""
 	(and(and(and(abroad yes)
-				(category-high yes))
+                    (category-high yes))
 		(beach yes))
-	(or (winter yes)
-		(autumn yes)))	   
+	     (or (winter yes)
+		 (autumn yes)))	   
 	(not (repair ?))
 	=>
 	(assert (repair "United Arab Emirates.")))
    
 (defrule Turkey ""
 	(and(and(and(abroad yes)
-				(category-middle yes))
+		    (category-middle yes))
 		(beach yes))
-	(or (spring yes)
-		(summer yes)))	   
+	     (or (spring yes)
+		 (summer yes)))	   
 	(not (repair ?))
 	=>
 	(assert (repair "Turkey.")))
    
 (defrule Egypt ""
 	(and(and(and(abroad yes)
-				(category-middle yes))
+                    (category-middle yes))
 		(beach yes))
-	(or (spring yes)
+	    (or (spring yes)
 		(autumn yes)))	   
 	(not (repair ?))
 	=>
@@ -248,53 +248,53 @@
    
 (defrule Germany-ski""
 	(and(and(and(and(and(abroad yes)
-						(category-high yes))
-				(visa yes))
-			(ski yes))
-		(children no))
-	(winter yes))	   
+                            (category-high yes))
+                        (visa yes))
+                    (ski yes))
+                (children no))
+	   (winter yes))	   
 	(not (repair ?))
 	=>
 	(assert (repair "Germany ski resort.")))   
 	
 (defrule Germany-excursion""
 	(and(and(and(and(abroad yes)
-					(category-high yes))
-			(visa yes))
-		(excursion yes))
-	(children no))   
+                        (category-high yes))
+                    (visa yes))
+                 (excursion yes))
+            (children no))   
 	(not (repair ?))
 	=>
 	(assert (repair "Germany excursion.")))
    
 (defrule Spain-ski""
 	(and(and(and(and(and(abroad yes)
-						(category-high yes))
-				(visa yes))
-			(ski yes))
-		(winter yes))
-	(children yes))   
+                            (category-high yes))
+		        (visa yes))
+		    (ski yes))
+	        (winter yes))
+	     (children yes))   
 	(not (repair ?))
 	=>
    (assert (repair "Spain ski resort.")))
    
 (defrule Spain-beach""
 	(and(and(and(and(and(abroad yes)
-						(category-high yes))
-				(visa yes))
-			(beach yes))
-		(summer yes))
-	(children yes))   
+			    (category-high yes))
+			(visa yes))
+		    (beach yes))
+                 (summer yes))
+	    (children yes))   
 	(not (repair ?))
 	=>
 	(assert (repair "Spain beach resort.")))
    
 (defrule China""
 	(and(and(and(and(abroad yes)
-					(category-high yes))
-			(visa yes))
-		(excursion yes))
-	(children yes))   
+                        (category-high yes))
+                    (visa yes))
+                 (excursion yes))
+             (children yes))   
 	(not (repair ?))
 	=>
 	(assert (repair "China.")))
