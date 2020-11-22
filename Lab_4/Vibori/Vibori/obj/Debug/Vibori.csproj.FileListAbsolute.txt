@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\bin\Debug\Vibori.exe.config
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\bin\Debug\Vibori.exe
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\bin\Debug\Vibori.pdb
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\obj\Debug\Vibori.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\obj\Debug\Vibori.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\obj\Debug\Vibori.exe
+C:\Users\Admin\source\repos\IIS_SH_S_A2\Lab_4\Vibori\Vibori\obj\Debug\Vibori.pdb

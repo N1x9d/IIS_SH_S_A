@@ -10,6 +10,13 @@ namespace Vibori
     {
         static void Main(string[] args)
         {
+            ConstituencyPriorites c = new ConstituencyPriorites(3, 5);
+            c.SetVoitersProirites();
+            c.CalculateResaltByKondarse();
+            Console.WriteLine("Kopland");
+            c.CalculateResaltByKopland();
+            Console.ReadKey();
+
         }
     }
 }
