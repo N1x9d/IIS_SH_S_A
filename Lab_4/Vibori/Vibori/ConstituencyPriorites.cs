@@ -17,33 +17,13 @@ namespace Vibori
         /// </summary>
         /// <param name="alternativesCount"> колличество альтернатив</param>
         /// <param name="voitersCount"> количество кандидатов</param>
-        public ConstituencyPriorites(int alternativesCount, int voitersCount)
+        public ConstituencyPriorites(int alternativesCount, int voitersCount, List<int[]> voitersResalts)
         {
             AlternativesCount = alternativesCount;
             VoitersCount = voitersCount;
-            VoitersResalts = new List<int[]>();
+            VoitersResalts = voitersResalts;
         }
-        /// <summary>
-        /// Ввести приоритеты избирателей
-        /// </summary>
-        public void SetVoitersProirites()
-        {
-            Console.WriteLine("Введите прироитеты голосующих");
-            int i = 0;
-            while(i < VoitersCount)
-            {
-                int j = 0;
-                Console.WriteLine($"Введите приоритеты {i+1} избирателя");
-                int[] resalt = new int[AlternativesCount];
-                while(j< AlternativesCount)
-                {
-                    resalt[j] = Convert.ToInt32(Console.ReadLine());
-                    j++;
-                }
-                VoitersResalts.Add(resalt);
-                i++;
-            }
-        }
+       
         /// <summary>
         /// посчитать методом Кондерсе по правилу явного победителя
         /// </summary>

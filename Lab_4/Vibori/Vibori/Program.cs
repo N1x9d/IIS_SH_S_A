@@ -29,6 +29,12 @@ namespace Vibori
                 i++;
 
             }
+            ConstituencyPriorites cp = new ConstituencyPriorites(AlternativesCount, VoitersCount, VoitersResalts);
+            Console.WriteLine("Kondarse metod");
+            cp.CalculateResaltByKondarse();
+            Console.WriteLine("Kopland metod");
+            cp.CalculateResaltByKopland();
+            Console.WriteLine("BordModel");
             BordModel bordModel = new BordModel(VoitersResalts);
             bordModel.CalculateResalt();
         }
