@@ -10,7 +10,7 @@ namespace Vibori
     {
         static void Main(string[] args)
         {
-            int VoitersCount =3;
+            int VoitersCount = 3;
             int AlternativesCount = 3;
             var VoitersResalts = new List<int[]>();
             Console.WriteLine("Введите прироитеты голосующих");
@@ -39,11 +39,15 @@ namespace Vibori
             Console.WriteLine();
             Console.WriteLine("BordModel");
             BordModel bordModel = new BordModel(VoitersResalts);
-            bordModel.CalculateResalt();
+            Console.WriteLine("Выигрывает альтернатива "+bordModel.CalculateResalt());
             Console.WriteLine();
             Console.WriteLine("Simpson rule");
             SimpsonRule sr = new SimpsonRule(VoitersResalts);
             sr.CalculateResalt();
+            Console.WriteLine();
+            Console.WriteLine("Relative majority");
+            RelativeMajority rm = new RelativeMajority(VoitersResalts);
+            rm.CalculateResalt();
             Console.ReadLine();
         }
         public void SetVoitersProirites()
