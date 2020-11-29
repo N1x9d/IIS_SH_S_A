@@ -30,13 +30,25 @@ namespace Vibori
 
             }
             ConstituencyPriorites cp = new ConstituencyPriorites(AlternativesCount, VoitersCount, VoitersResalts);
+            Console.WriteLine();
             Console.WriteLine("Kondarse metod");
             cp.CalculateResaltByKondarse();
+            Console.WriteLine();
             Console.WriteLine("Kopland metod");
             cp.CalculateResaltByKopland();
+            Console.WriteLine();
             Console.WriteLine("BordModel");
             BordModel bordModel = new BordModel(VoitersResalts);
-            bordModel.CalculateResalt();
+            Console.WriteLine("Выигрывает альтернатива "+bordModel.CalculateResalt());
+            Console.WriteLine();
+            Console.WriteLine("Simpson rule");
+            SimpsonRule sr = new SimpsonRule(VoitersResalts);
+            sr.CalculateResalt();
+            Console.WriteLine();
+            Console.WriteLine("Relative majority");
+            RelativeMajority rm = new RelativeMajority(VoitersResalts);
+            rm.CalculateResalt();
+            Console.ReadLine();
         }
         public void SetVoitersProirites()
         {
