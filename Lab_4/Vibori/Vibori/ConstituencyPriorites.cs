@@ -23,7 +23,7 @@ namespace Vibori
             VoitersCount = voitersCount;
             VoitersResalts = voitersResalts;
         }
-       
+       z
         /// <summary>
         /// посчитать методом Кондерсе по правилу явного победителя
         /// </summary>
