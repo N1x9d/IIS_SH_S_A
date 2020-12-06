@@ -31,6 +31,7 @@ namespace SemNet
             Successor = successor;
             parent.AddConnection(this);
             successor.AddConnection(this);
+            return this;
         }
     }
 }
