@@ -1,0 +1,10 @@
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\bin\Debug\SemNet.exe.config
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\bin\Debug\SemNet.exe
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\bin\Debug\SemNet.pdb
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.csprojAssemblyReference.cache
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.Properties.Resources.resources
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.csproj.GenerateResource.cache
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.csproj.CoreCompileInputs.cache
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.exe
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.pdb
+C:\Users\Nova\source\repos\IIS_SH_S_A2\lab_3\SemNet\obj\Debug\SemNet.Form1.resources

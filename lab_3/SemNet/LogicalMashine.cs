@@ -18,7 +18,7 @@ namespace SemNet
             connections = KBGenerator.connection;
             eneties = KBGenerator.entity;
         }
-        public bool HierarchicalQuestion(string Parent, string Children)
+        public bool HierarchicalQuestion(string Children, string Parent)
         {
             Entity CurrentChildren=null;
             foreach(var enety in eneties)

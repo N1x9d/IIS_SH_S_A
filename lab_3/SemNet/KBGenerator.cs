@@ -10,6 +10,8 @@ namespace SemNet
     {
         List<Entity> Entites = new List<Entity>();
         List<Connection> connections = new List<Connection>();
+        public IReadOnlyList<Entity> entity => Entites;
+        public IReadOnlyList<Connection> connection => connections;
 
         public KBGenerator()
         {
