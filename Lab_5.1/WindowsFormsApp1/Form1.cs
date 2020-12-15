@@ -15,6 +15,7 @@ namespace NeiroNetTest
         static int SizeElementM = 30;
         static bool stateЬMouseDown = false;
         int schet = 1;
+        List<int[]> dataForOpen = new List<int[]>();
 
         Bitmap flag;
         Graphics flagGraphics;
@@ -36,6 +37,27 @@ namespace NeiroNetTest
             textBox3.Text = "30";
             textBox4.Text = "30";
             textBox5.Text = schet.ToString();
+            textBox5.Visible = false;
+            button3.Visible = false;
+            for (int i=0; i<10; i++)
+            {
+                for (int k=1; k<11; k++)
+                {
+                    string path = "F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\" + i + "_" + k + ".csv";
+                    OpenData(path);
+                    int[,] element = new int[CountElementN, CountElementM];
+                    for (int p = 0; p < CountElementN; p++)
+                    {
+
+                        for (int n = 0; n < CountElementM; n++)
+                        {
+                            element[p, n] = dataForOpen[p][n];
+                        }
+                    }
+                    Layer ll = new Layer();
+                    ll.autoLearning(element, i, 7);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,7 +114,7 @@ namespace NeiroNetTest
 
         public void SaveData()
         {
-            string path = "F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\" + schet.ToString() + ".csv";
+            string path = "F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\распознать.csv";
             TextWriter tw = new StreamWriter(path);
             List<string[]> dataForSave = new List<string[]>();
             string[] one = new string[12];
@@ -100,38 +122,88 @@ namespace NeiroNetTest
             {                
                 string[] lol = new string[12];
                 for (int k = 0; k < CountElementM; k++)
-                {
-                    //vhod += flagelement[i, k];
-                    //dataForSave.Add(new string[]);
-                    if (i==0) one[k] = flagelement[k, i].ToString();
-                    else lol[k] = flagelement[k, i].ToString();
+                {                    
+                    //if (i==0) one[k] = flagelement[k, i].ToString();
+                    /*else*/ lol[k] = flagelement[k, i].ToString();
                 }
-                if (lol[0]!=null) dataForSave.Add(lol);
+                /*if (lol[0]!=null) */dataForSave.Add(lol);
             }
-            //var headers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
-            CsvWriter.Write(tw/*, headers*/, one, dataForSave, ';');
+            var headers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+            CsvWriter.Write(tw, headers, /*one,*/ dataForSave, ';');
             tw.Close();            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SaveData();
-            button2_Click(sender, e);
-            schet++;
-            textBox5.Text = schet.ToString();
+            //SaveData();
+            //button2_Click(sender, e);
+            //schet++;
+            //textBox5.Text = schet.ToString();
         }
 
-        //public void OpenData()
-        //{
-        //    //Departments.Clear();
-        //    var csv = File.ReadAllText("Departments.csv");
-        //    foreach (var line in CsvReader.ReadFromText(csv))
-        //    {
-        //        var id = line["id"];
-        //        var Name = line["Name"];
-        //        var Size = line["Size"];
-        //        Departments.Add(new Department(Convert.ToInt64(id), Name, Convert.ToInt32(Size)));
-        //    }
-        //}
+        public void OpenData(string path)
+        {
+            dataForOpen.Clear();
+            var csv = File.ReadAllText(path); //*"F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\" + schet.ToString() + ".csv");
+            foreach (var line in CsvReader.ReadFromText(csv))
+            {               
+                var o = line["1"];
+                var dv = line["2"];
+                var t = line["3"];
+                var ch = line["4"];
+                var p = line["5"];
+                var sh = line["6"];
+                var s = line["7"];
+                var v = line["8"];
+                var dev = line["9"];
+                var des = line["10"];
+                var odin = line["11"];
+                var dven = line["12"];
+                int[] mass = new int[] { Convert.ToInt32(o), Convert.ToInt32(dv), Convert.ToInt32(t), Convert.ToInt32(ch), Convert.ToInt32(p), Convert.ToInt32(sh), Convert.ToInt32(s), Convert.ToInt32(v), Convert.ToInt32(dev), Convert.ToInt32(des), Convert.ToInt32(odin), Convert.ToInt32(dven) };
+                dataForOpen.Add(mass); 
+            }
+
+            //for (int i = 0; i < CountElementN; i++)
+            //{
+            //    string[] lol = new string[12];
+            //    for (int k = 0; k < CountElementM; k++)
+            //    {
+            //        //if (i==0) one[k] = flagelement[k, i].ToString();
+            //        /*else*/
+            //        //lol[k] = flagelement[k, i].ToString();
+            //        flagelement[i, k] = 1;
+            //    }
+            //    /*if (lol[0]!=null) */
+            //    dataForSave.Add(lol);
+            //}
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //OpenData();
+            //int[,] element = new int[CountElementN, CountElementM];
+            //for (int i = 0; i < CountElementN; i++)
+            //{
+                
+            //    for (int k = 0; k < CountElementM; k++)
+            //    {
+            //        element[i, k] = dataForOpen[i][k];
+            //    }                
+            //}
+            string path = "F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\распознать.csv";
+            SaveData();
+            OpenData(path);
+            int[,] element = new int[CountElementN, CountElementM];
+            for (int p = 0; p < CountElementN; p++)
+            {
+
+                for (int n = 0; n < CountElementM; n++)
+                {
+                    element[p, n] = dataForOpen[p][n];
+                }
+            }
+            Layer ll = new Layer();
+            ll.RunNet(element);
+        }
     }
 }
