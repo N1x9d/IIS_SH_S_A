@@ -20,6 +20,7 @@ namespace NeiroNetTest
         Bitmap flag;
         Graphics flagGraphics;
         int[,] flagelement = new int[CountElementN, CountElementM];
+        Layer ll = new Layer();
 
         public Form1()
         {
@@ -54,7 +55,7 @@ namespace NeiroNetTest
                             element[p, n] = dataForOpen[p][n];
                         }
                     }
-                    Layer ll = new Layer();
+                   
                     ll.autoLearning(element, i, 7);
                 }
             }
@@ -202,7 +203,7 @@ namespace NeiroNetTest
                     element[p, n] = dataForOpen[p][n];
                 }
             }
-            Layer ll = new Layer();
+            //Layer ll = new Layer();
             ll.RunNet(element);
         }
     }
