@@ -6,7 +6,7 @@ namespace NeiroNetTest
     {
         private int NeironResalt; //то число за которое нейрон отвечает
         private List<NeironInputs> _inputCons = new List<NeironInputs>(); //входы
-        private double _errorLim = 0.01; //порог ошибки
+        private double _errorLim = 0.1; //порог ошибки
         private decimal _lastError = 0m;
 
         public Neiron(int neironResalt, List<Connection> cons)
@@ -35,14 +35,14 @@ namespace NeiroNetTest
                 foreach (var inp in _inputCons)
                 {
                     if (matrix[inp.Connection.MatrixX, inp.Connection.MatrixY] == 1)
-                        inp.Weight -=0.01m;
+                        inp.Weight -=0.05m;
                 }
             else
             {
                 foreach (var inp in _inputCons)
                 {
                     if (matrix[inp.Connection.MatrixX, inp.Connection.MatrixY] == 1)
-                        inp.Weight +=0.01m;
+                        inp.Weight +=0.05m;
                 }
             }
         }

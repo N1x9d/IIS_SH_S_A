@@ -20,7 +20,7 @@
         public NeironInputs(Connection connection)
         {
             _connection = connection;
-            _weight = 0.5m;
+            _weight = 0.1m;
         }
     }
 }

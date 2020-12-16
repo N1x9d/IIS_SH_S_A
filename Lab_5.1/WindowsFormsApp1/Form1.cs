@@ -39,26 +39,7 @@ namespace NeiroNetTest
             textBox4.Text = "30";
             textBox5.Text = schet.ToString();
             textBox5.Visible = false;
-            button3.Visible = false;
-            for (int i=0; i<10; i++)
-            {
-                for (int k=1; k<11; k++)
-                {
-                    string path = "F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\" + i + "_" + k + ".csv";
-                    OpenData(path);
-                    int[,] element = new int[CountElementN, CountElementM];
-                    for (int p = 0; p < CountElementN; p++)
-                    {
-
-                        for (int n = 0; n < CountElementM; n++)
-                        {
-                            element[p, n] = dataForOpen[p][n];
-                        }
-                    }
-                   
-                    ll.autoLearning(element, i, 7);
-                }
-            }
+            button3.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -96,10 +77,15 @@ namespace NeiroNetTest
                     int x = Convert.ToInt32(Math.Floor(px / SizeElementN));
                     int y = Convert.ToInt32(Math.Floor(py / SizeElementM));
                     flagelement[x, y] = 1;
-                    flagGraphics.FillRectangle(Brushes.Black, x * SizeElementN, y * SizeElementM, SizeElementN, SizeElementM);
+                    flagGraphics.FillRectangle(Brushes.Black, x * SizeElementN, y * SizeElementM, SizeElementN,
+                        SizeElementM);
                     pictureBox1.Image = flag;
                 }
-                catch (System.IndexOutOfRangeException) { MessageBox.Show("Куды повел"); stateЬMouseDown = false; }
+                catch (System.IndexOutOfRangeException)
+                {
+                    MessageBox.Show("Куды повел");
+                    stateЬMouseDown = false;
+                }
             }
         }
 
@@ -120,50 +106,68 @@ namespace NeiroNetTest
             List<string[]> dataForSave = new List<string[]>();
             string[] one = new string[12];
             for (int i = 0; i < CountElementN; i++)
-            {                
+            {
                 string[] lol = new string[12];
                 for (int k = 0; k < CountElementM; k++)
-                {                    
+                {
                     //if (i==0) one[k] = flagelement[k, i].ToString();
-                    /*else*/ lol[k] = flagelement[k, i].ToString();
+                    /*else*/
+                    lol[k] = flagelement[k, i].ToString();
                 }
-                /*if (lol[0]!=null) */dataForSave.Add(lol);
+
+                /*if (lol[0]!=null) */
+                dataForSave.Add(lol);
             }
-            var headers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+
+            var headers = new string[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
             CsvWriter.Write(tw, headers, /*one,*/ dataForSave, ';');
-            tw.Close();            
+            tw.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //SaveData();
-            //button2_Click(sender, e);
-            //schet++;
-            //textBox5.Text = schet.ToString();
+            button3.Enabled = false;
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            // получаем выбранный файл
+            string filename = folderBrowserDialog1.SelectedPath;
+            List<int[,]> numbers=new List<int[,]>();
+            for (int j = 0; j < 10; j++)
+            {numbers.Clear();
+                for (int i = 0; i < 10; i++)
+                {
+                    numbers.Add(OpenData(filename + $@"\{i}_{j + 1}.csv"));
+                }
+                ll.autoLearning(numbers, 10000);
+            }
+
+            button3.Enabled = true;
         }
 
-        public void OpenData(string path)
+        public int[,] OpenData(string path)
         {
+            int[,] res = new int[12, 12];
+            int i = 0;
             dataForOpen.Clear();
             var csv = File.ReadAllText(path); //*"F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\" + schet.ToString() + ".csv");
             foreach (var line in CsvReader.ReadFromText(csv))
-            {               
-                var o = line["1"];
-                var dv = line["2"];
-                var t = line["3"];
-                var ch = line["4"];
-                var p = line["5"];
-                var sh = line["6"];
-                var s = line["7"];
-                var v = line["8"];
-                var dev = line["9"];
-                var des = line["10"];
-                var odin = line["11"];
-                var dven = line["12"];
-                int[] mass = new int[] { Convert.ToInt32(o), Convert.ToInt32(dv), Convert.ToInt32(t), Convert.ToInt32(ch), Convert.ToInt32(p), Convert.ToInt32(sh), Convert.ToInt32(s), Convert.ToInt32(v), Convert.ToInt32(dev), Convert.ToInt32(des), Convert.ToInt32(odin), Convert.ToInt32(dven) };
-                dataForOpen.Add(mass); 
+            {
+                res[i, 0] = Convert.ToInt32(line["1"]);
+                res[i, 1] = Convert.ToInt32(line["2"]);
+                res[i, 2] = Convert.ToInt32(line["3"]);
+                res[i, 3] = Convert.ToInt32(line["4"]);
+                res[i, 4] = Convert.ToInt32(line["5"]);
+                res[i, 5] = Convert.ToInt32(line["6"]);
+                res[i, 6] = Convert.ToInt32(line["7"]);
+                res[i, 7] = Convert.ToInt32(line["8"]);
+                res[i, 8] = Convert.ToInt32(line["9"]);
+                res[i, 9] = Convert.ToInt32(line["10"]);
+                res[i, 10] = Convert.ToInt32(line["11"]);
+                res[i, 11] = Convert.ToInt32(line["12"]);
+                i++;
             }
 
+            return res;
             //for (int i = 0; i < CountElementN; i++)
             //{
             //    string[] lol = new string[12];
@@ -181,30 +185,15 @@ namespace NeiroNetTest
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //OpenData();
-            //int[,] element = new int[CountElementN, CountElementM];
-            //for (int i = 0; i < CountElementN; i++)
-            //{
-                
-            //    for (int k = 0; k < CountElementM; k++)
-            //    {
-            //        element[i, k] = dataForOpen[i][k];
-            //    }                
-            //}
-            string path = "F:\\4 курс\\1 семестр\\ИСИТ\\Цифры\\распознать.csv";
-            SaveData();
-            OpenData(path);
-            int[,] element = new int[CountElementN, CountElementM];
-            for (int p = 0; p < CountElementN; p++)
-            {
-
-                for (int n = 0; n < CountElementM; n++)
-                {
-                    element[p, n] = dataForOpen[p][n];
-                }
-            }
             //Layer ll = new Layer();
-            ll.RunNet(element);
+
+            textBox5.Visible = true;
+            textBox5.Text = ll.RunNet(flagelement).ToString();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ll.manualLearning(flagelement,Convert.ToInt32(textBox5.Text));
         }
     }
 }

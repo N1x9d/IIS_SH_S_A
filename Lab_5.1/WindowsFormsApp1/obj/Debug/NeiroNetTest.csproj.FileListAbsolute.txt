@@ -20,3 +20,16 @@ C:\Users\Nova\source\repos\IIS_SH_S_A2\Lab_5.1\WindowsFormsApp1\obj\Debug\Window
 C:\Users\Nova\source\repos\IIS_SH_S_A2\Lab_5.1\WindowsFormsApp1\bin\Debug\Csv.dll
 C:\Users\Nova\source\repos\IIS_SH_S_A2\Lab_5.1\WindowsFormsApp1\bin\Debug\Csv.xml
 C:\Users\Nova\source\repos\IIS_SH_S_A2\Lab_5.1\WindowsFormsApp1\obj\Debug\NeiroNetTest.csproj.CopyComplete
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\bin\Debug\Csv.dll
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\bin\Debug\Csv.xml
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\NeiroNetTest.csprojAssemblyReference.cache
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\NeiroNetTest.Form1.resources
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\NeiroNetTest.csproj.GenerateResource.cache
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\NeiroNetTest.csproj.CoreCompileInputs.cache
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\NeiroNetTest.csproj.CopyComplete
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Admin\RiderProjects\IIS_SH_S_A\Lab_5.1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
